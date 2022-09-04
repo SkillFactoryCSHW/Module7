@@ -6,9 +6,9 @@
     }
 }
 
-class DerivedClass
+class DerivedClass: BaseClass
 {
-    public virtual void Display()
+    public override void Display()
     {
         Console.WriteLine("Метод класса DerivedClass");
     }
