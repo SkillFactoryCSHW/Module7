@@ -2,14 +2,14 @@
 {
     public virtual void Display()
     {
-        Console.WriteLine("Метод класса BaseClass");
+        Console.WriteLine("BaseClass method");
     }
 }
 
-class DerivedClass: BaseClass
+class DerivedClass : BaseClass
 {
     public override void Display()
     {
-        Console.WriteLine("Метод класса DerivedClass");
+        Console.WriteLine("DerivedClass method");
     }
 }
