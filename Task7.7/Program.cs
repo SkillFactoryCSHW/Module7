@@ -78,21 +78,61 @@ class CourierPayment : Payment
     }
 }
 
+//FeedBack
+class VideoFeedBack
+{
+}
+
+class FeedBack
+{
+    private VideoFeedBack videoFeedBack;
+
+    public FeedBack()
+    {
+        videoFeedBack = new VideoFeedBack();
+    }
+}
+
+//Description
+class Description
+{
+    public static int MaxSymbols = 1000;
+
+    public Description(int value)
+    {
+        if (value < MaxSymbols)
+        {
+            value = MaxSymbols;
+        }
+        else
+        {
+            Console.WriteLine("Too many characters");
+        }
+    }
+}
+
+//Number
+class Number
+{
+    public void Display<TNumber>(TNumber id)
+    {
+        Console.WriteLine(id.ToString());
+    }
+}
+
 //Order
-class Order<TDelivery,TPayment> where TDelivery : Delivery where TPayment : Payment
+class Order<TDelivery,TPayment, TDescription, TNumber> where TDelivery : Delivery where TPayment : Payment where TDescription : Description where TNumber : Number
 {
     public TDelivery Delivery;
 
     public TPayment Payment;
 
-    public int Number;
+    public TNumber Number;
 
-    public string Description;
+    public TDescription Description;
 
     public void DisplayAddress()
     {
         Console.WriteLine(Delivery.Address);
     }
-
-    // ... Другие поля
 }
